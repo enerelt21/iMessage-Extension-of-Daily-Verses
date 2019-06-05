@@ -206,7 +206,7 @@ static NSString * const reuseIdentifier = @"Daily Verses";
     }
     if (self.presentationStyle == MSMessagesAppPresentationStyleExpanded)
     {
-        NSLog(@"expanded");
+        NSLog(@"expanded yes");
         //self.presentationStyle = MSMessagesAppPresentationStyleCompact;
     }
    // [self.collectionView reloadData];
