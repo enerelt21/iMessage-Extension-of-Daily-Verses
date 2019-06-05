@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fwu-Ip-otS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sHn-tI-Bfa">
+                                <rect key="frame" x="0.0" y="90" width="320" height="438"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lWn-Zv-08l">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0LR-1m-fFl">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ObA-dk-sSI" id="ajw-kh-ha6"/>
+                                    <outlet property="delegate" destination="ObA-dk-sSI" id="KKc-ZR-spJ"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCP-gO-Ag5">
+                                <rect key="frame" x="210" y="52" width="76" height="30"/>
+                                <state key="normal" title="Translation"/>
+                                <connections>
+                                    <action selector="onChangeTranslation:" destination="ObA-dk-sSI" eventType="touchUpInside" id="b9S-5q-jHl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEs-TR-Hkv">
+                                <rect key="frame" x="120" y="52" width="89" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="210" id="1xo-jf-aj1"/>
+                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="210" id="7WV-6B-idp"/>
+                            <constraint firstItem="sHn-tI-Bfa" firstAttribute="top" secondItem="jCP-gO-Ag5" secondAttribute="bottom" constant="8" id="BxC-bg-0eO"/>
+                            <constraint firstAttribute="bottom" secondItem="sHn-tI-Bfa" secondAttribute="bottom" id="Fr9-pD-H4y"/>
+                            <constraint firstItem="sHn-tI-Bfa" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" id="KBg-31-tPJ"/>
+                            <constraint firstItem="sHn-tI-Bfa" firstAttribute="trailing" secondItem="mD1-2f-1g2" secondAttribute="trailing" id="QIV-lv-65u"/>
+                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="top" secondItem="mD1-2f-1g2" secondAttribute="top" constant="8" id="XTo-K9-yIo"/>
+                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="120" id="i0o-BQ-4MW"/>
+                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="top" secondItem="mD1-2f-1g2" secondAttribute="top" constant="8" id="mru-PK-TcJ"/>
+                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="120" id="sRc-ZN-4SN"/>
+                            <constraint firstItem="sHn-tI-Bfa" firstAttribute="top" secondItem="LEs-TR-Hkv" secondAttribute="bottom" constant="8" id="sqq-1Y-Ce9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mD1-2f-1g2"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="collectionView" destination="sHn-tI-Bfa" id="Uwv-2t-bOG"/>
+                        <outlet property="translationButton" destination="jCP-gO-Ag5" id="rgK-UM-DF9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
