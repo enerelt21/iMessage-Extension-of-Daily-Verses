@@ -46,11 +46,6 @@ static NSString * const reuseIdentifier = @"Daily Verses";
 }
 -(void) getVerses{
     self.verses = [NSMutableArray array];
-    /*  UIActivityIndicatorView *act = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleGray];
-     act.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, [[UIScreen mainScreen] bounds].size.height/2);
-     [self.view addSubview:act];
-     [act startAnimating];
-     */
     NSDateComponents *todayComp = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate: [NSDate date]];
     NSDateComponents *comp = [[NSDateComponents alloc] init] ;
     comp.year = 2019;
@@ -81,11 +76,6 @@ static NSString * const reuseIdentifier = @"Daily Verses";
         jan2Date = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitDay value:1 toDate:jan1Date options:0];
         //NSLog(@"%@", urlString);
     }
-    /*
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [act stopAnimating];
-     });
-     */
 }
 
 -(void)onChangeTranslation:(id)sender
@@ -100,9 +90,7 @@ static NSString * const reuseIdentifier = @"Daily Verses";
         }];
         [alert addAction:action];
     }
-    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        //Cancel if the user clicks outside the alert view
-    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
@@ -203,16 +191,12 @@ static NSString * const reuseIdentifier = @"Daily Verses";
             NSLog(@"error: %@", error.localizedDescription);
         }];
     }
-    else {
+    else
         NSLog(@"Conversation is nil");
-    }
+
     if (self.presentationStyle == MSMessagesAppPresentationStyleExpanded)
-    {
-        NSLog(@"expanded yes");
         [self requestPresentationStyle:MSMessagesAppPresentationStyleCompact];
-        //self.presentationStyle = MSMessagesAppPresentationStyleCompact;
-    }
-   // [self.collectionView reloadData];
+
 }
 #pragma mark - Conversation Handling
 
