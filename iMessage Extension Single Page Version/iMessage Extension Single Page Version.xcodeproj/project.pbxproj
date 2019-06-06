@@ -26,6 +26,8 @@
 		53DB761C22A987AA0058E8FD /* 120x90.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DB761822A987AA0058E8FD /* 120x90.png */; };
 		53DB761D22A987AA0058E8FD /* 180x135.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53DB761922A987AA0058E8FD /* 180x135.jpg */; };
 		53DB761E22A987AA0058E8FD /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DB761A22A987AA0058E8FD /* 58.png */; };
+		53DB762122A9B03B0058E8FD /* Bible+-by-Olive-Tree-app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DB762022A9B03B0058E8FD /* Bible+-by-Olive-Tree-app-icon.png */; };
+		53DB762522A9B0BF0058E8FD /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DB762422A9B0BF0058E8FD /* 87.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		53DB761822A987AA0058E8FD /* 120x90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 120x90.png; path = ../../../../120x90.png; sourceTree = "<group>"; };
 		53DB761922A987AA0058E8FD /* 180x135.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 180x135.jpg; path = ../../../../180x135.jpg; sourceTree = "<group>"; };
 		53DB761A22A987AA0058E8FD /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 58.png; path = ../../../../58.png; sourceTree = "<group>"; };
+		53DB762022A9B03B0058E8FD /* Bible+-by-Olive-Tree-app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bible+-by-Olive-Tree-app-icon.png"; path = "../../../../Bible+-by-Olive-Tree-app-icon.png"; sourceTree = "<group>"; };
+		53DB762422A9B0BF0058E8FD /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 87.png; path = ../../../../../Downloads/87.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				53DB761A22A987AA0058E8FD /* 58.png */,
+				53DB762022A9B03B0058E8FD /* Bible+-by-Olive-Tree-app-icon.png */,
+				53DB762422A9B0BF0058E8FD /* 87.png */,
 				53DB761722A987AA0058E8FD /* 87.jpg */,
 				53DB761822A987AA0058E8FD /* 120x90.png */,
 				53DB761922A987AA0058E8FD /* 180x135.jpg */,
@@ -376,10 +382,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DB762522A9B0BF0058E8FD /* 87.png in Resources */,
 				53DB761C22A987AA0058E8FD /* 120x90.png in Resources */,
 				53DB761E22A987AA0058E8FD /* 58.png in Resources */,
 				53DB761B22A987AA0058E8FD /* 87.jpg in Resources */,
 				53DB753E22A70CE70058E8FD /* Assets.xcassets in Resources */,
+				53DB762122A9B03B0058E8FD /* Bible+-by-Olive-Tree-app-icon.png in Resources */,
 				53DB761D22A987AA0058E8FD /* 180x135.jpg in Resources */,
 				53DB753C22A70CE60058E8FD /* MainInterface.storyboard in Resources */,
 			);

@@ -26,6 +26,7 @@
 -(void) prepareForReuse{
     self.verseImage.image = nil;
     self.url = nil;
+    self.cellLabel = nil;
     [super prepareForReuse];
 }
 

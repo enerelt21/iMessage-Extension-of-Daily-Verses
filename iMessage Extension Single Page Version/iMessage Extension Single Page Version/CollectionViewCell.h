@@ -13,4 +13,5 @@
 
 @property(strong, nonatomic) UIImageView * verseImage;
 @property (strong, nonatomic) NSURL *url;
+@property (strong, nonatomic) UILabel *cellLabel;
 @end

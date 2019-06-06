@@ -11,13 +11,13 @@
 #import <QuartzCore/QuartzCore.h>
 @interface MessagesViewController ()
 @property (strong, nonatomic) NSMutableArray *verses;
+@property (strong, nonatomic) NSMutableArray *dateComp;
 @property (strong, nonatomic) NSString *translation;
 @end
 
 static NSString * const reuseIdentifier = @"Daily Verses";
 
 @implementation MessagesViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getVerses];
@@ -30,17 +30,7 @@ static NSString * const reuseIdentifier = @"Daily Verses";
 
     self.navigationItem.title = @"Daily Verses";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
-    //self.navigationController.navigationItem.leftBarButtonItem = NIV;
-    //self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:NIV, NVI, NKJV, KJV, nil];
-//    UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    flowLayout.itemSize = CGSizeMake(118, 118);
-//    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-//    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
     [self.collectionView registerClass:CollectionViewCell.class forCellWithReuseIdentifier:reuseIdentifier];
-//    [self.collectionView addSubview:NIV];
-//    [self.collectionView addSubview:NVI];
-//    [self.collectionView addSubview:NKJV];
-//    [self.collectionView addSubview:KJV];
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     layout.itemSize = CGSizeMake(118, 118);
 }
@@ -54,11 +44,10 @@ static NSString * const reuseIdentifier = @"Daily Verses";
     
     NSDate *jan1Date = [[NSCalendar currentCalendar] dateFromComponents:comp];
     NSDate *jan2Date = jan1Date;
-    
     NSString *month = NSString.new;
     NSString *day = NSString.new;
     self.translation = @"NIV";
-    while(comp.month != todayComp.month || comp.day != todayComp.day){
+    while(comp.month != todayComp.month || comp.day != todayComp.day || comp.year != todayComp.year){
         comp = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate: jan2Date];
         //NSLog(@"Year: %ld    Month: %ld    Day: %ld", (long)comp.year, (long)comp.month, (long)comp.day);
         if (comp.month < 10)
@@ -71,13 +60,12 @@ static NSString * const reuseIdentifier = @"Daily Verses";
             day = [NSString stringWithFormat:@"%ld", comp.day];
         NSString *urlString = [NSString stringWithFormat:@"https://votd.olivetree.com/%@_%@_%@.jpg", month, day, self.translation];
         
+        [self.dateComp addObject:[NSString stringWithFormat:@"%@/%@/%ld", month, day, (long)comp.year]];
         [self.verses addObject:urlString];
         jan1Date = jan2Date;
         jan2Date = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitDay value:1 toDate:jan1Date options:0];
-        //NSLog(@"%@", urlString);
     }
 }
-
 -(void)onChangeTranslation:(id)sender
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Translations" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -96,36 +84,9 @@ static NSString * const reuseIdentifier = @"Daily Verses";
 
 -(void)showTranslation:(NSString *)translation
 {
-    //NSString *temp = [NSString stringWithFormat:@"Translation: %@", translation];
     self.translation = translation;
     [self.collectionView reloadData];
     [self.translationButton setTitle:translation forState:UIControlStateNormal];
-}
-
--(void)showNIV{
-    self.translation = @"NIV";
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-    });
-    
-}
--(void)showNVI{
-    self.translation = @"NVI";
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-    });
-}
--(void)showNKJV{
-    self.translation = @"NKJV";
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-    });
-}
--(void)showKJV{
-    self.translation = @"KJV";
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-    });
 }
 #pragma mark <UICollectionViewDataSource>
 
@@ -141,13 +102,16 @@ static NSString * const reuseIdentifier = @"Daily Verses";
     self.verses[self.verses.count - indexPath.row - 1] = [self.verses[self.verses.count - indexPath.row - 1] stringByReplacingOccurrencesOfString:@"NIV" withString:self.translation];
     NSURL *url = [NSURL URLWithString:self.verses[self.verses.count - indexPath.row - 1]];
     self.verses[self.verses.count - indexPath.row - 1] = [self.verses[self.verses.count - indexPath.row - 1] stringByReplacingOccurrencesOfString:self.translation withString:@"NIV"];
-
+    
     cell.url = url;
+    cell.cellLabel.text = self.dateComp[self.verses.count - indexPath.row - 1];
+    cell.cellLabel.frame = CGRectMake(cell.center.x, cell.center.y, 10, 5);
+    cell.cellLabel.textColor = [UIColor blueColor];
+    [cell.cellLabel setFont:[UIFont fontWithName:@"Helvetica" size: 8]];
+    
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
     {
-//          (@"Got response from %@ - going to main thread to set image", url);
         dispatch_async(dispatch_get_main_queue(), ^{
-//            NSLog(@"ON main thread");
             if ([cell.url isEqual:url])
                 cell.verseImage.image = [UIImage imageWithData:data];
         });
@@ -156,7 +120,6 @@ static NSString * const reuseIdentifier = @"Daily Verses";
             NSLog(@"The process of getting bible verses failed: %@", error);
             return;
         }
-        
     }] resume];
     return cell;
 }
@@ -168,31 +131,22 @@ static NSString * const reuseIdentifier = @"Daily Verses";
      self.verses[self.verses.count - indexPath.row - 1] = [self.verses[self.verses.count - indexPath.row - 1] stringByReplacingOccurrencesOfString:self.translation withString:@"NIV"];
     NSData *data = [NSData dataWithContentsOfURL:url];
     temp.image = [UIImage imageWithData:data];
-    /*
-    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-      {
-          //          (@"Got response from %@ - going to main thread to set image", url);
-          dispatch_async(dispatch_get_main_queue(), ^{
-              //            NSLog(@"ON main thread");
-              temp.image = [UIImage imageWithData:data];
-          });
-          if (error)
-          {
-              NSLog(@"The process of getting bible verses failed: %@", error);
-              return;
-          }
-          
-      }] resume];
-    */
+
     self.message = MSMessage.new;
     self.message.layout = temp;
+    /*MSSticker *sticker = [[MSSticker alloc] initWithContentsOfFileURL:url localizedDescription:@"Sticker" error:nil];
+    //[sticker initWithContentsOfFileURL:url localizedDescription:@"Sticker" error:nil];
+    [self.activeConversation insertSticker:sticker completionHandler:^(NSError * _Nullable error) {
+        NSLog(@"error: %@", error.localizedDescription);
+    }];*/
+    //[self.activeConversation insertSticker:sticker completionHandler:nil];
     if ([self activeConversation] != nil) {
-        [[self activeConversation] insertMessage:self.message completionHandler:^(NSError * _Nullable error) {
+        [self.activeConversation insertMessage:self.message completionHandler:^(NSError * _Nullable error) {
             NSLog(@"error: %@", error.localizedDescription);
         }];
     }
-    else
-        NSLog(@"Conversation is nil");
+//    else
+//        NSLog(@"Conversation is nil");
 
     if (self.presentationStyle == MSMessagesAppPresentationStyleExpanded)
         [self requestPresentationStyle:MSMessagesAppPresentationStyleCompact];
