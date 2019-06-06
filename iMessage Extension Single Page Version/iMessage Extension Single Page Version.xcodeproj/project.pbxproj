@@ -22,6 +22,10 @@
 		53DB754222A70CE70058E8FD /* iMessage Xtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 53DB753422A70CE60058E8FD /* iMessage Xtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		53DB754722A712470058E8FD /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DB753822A70CE60058E8FD /* MessagesViewController.m */; };
 		53DB75D022A814760058E8FD /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 532FC4C822A07E9B00834A60 /* CollectionViewCell.m */; };
+		53DB761B22A987AA0058E8FD /* 87.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53DB761722A987AA0058E8FD /* 87.jpg */; };
+		53DB761C22A987AA0058E8FD /* 120x90.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DB761822A987AA0058E8FD /* 120x90.png */; };
+		53DB761D22A987AA0058E8FD /* 180x135.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53DB761922A987AA0058E8FD /* 180x135.jpg */; };
+		53DB761E22A987AA0058E8FD /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DB761A22A987AA0058E8FD /* 58.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		53DB753B22A70CE60058E8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		53DB753D22A70CE70058E8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53DB753F22A70CE70058E8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53DB761722A987AA0058E8FD /* 87.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 87.jpg; path = ../../../../87.jpg; sourceTree = "<group>"; };
+		53DB761822A987AA0058E8FD /* 120x90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 120x90.png; path = ../../../../120x90.png; sourceTree = "<group>"; };
+		53DB761922A987AA0058E8FD /* 180x135.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 180x135.jpg; path = ../../../../180x135.jpg; sourceTree = "<group>"; };
+		53DB761A22A987AA0058E8FD /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 58.png; path = ../../../../58.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,11 +205,23 @@
 			children = (
 				53DB753822A70CE60058E8FD /* MessagesViewController.m */,
 				53DB753722A70CE60058E8FD /* MessagesViewController.h */,
+				53DB761622A987910058E8FD /* images */,
 				53DB753A22A70CE60058E8FD /* MainInterface.storyboard */,
 				53DB753D22A70CE70058E8FD /* Assets.xcassets */,
 				53DB753F22A70CE70058E8FD /* Info.plist */,
 			);
 			path = "iMessage Xtension";
+			sourceTree = "<group>";
+		};
+		53DB761622A987910058E8FD /* images */ = {
+			isa = PBXGroup;
+			children = (
+				53DB761A22A987AA0058E8FD /* 58.png */,
+				53DB761722A987AA0058E8FD /* 87.jpg */,
+				53DB761822A987AA0058E8FD /* 120x90.png */,
+				53DB761922A987AA0058E8FD /* 180x135.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,7 +376,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DB761C22A987AA0058E8FD /* 120x90.png in Resources */,
+				53DB761E22A987AA0058E8FD /* 58.png in Resources */,
+				53DB761B22A987AA0058E8FD /* 87.jpg in Resources */,
 				53DB753E22A70CE70058E8FD /* Assets.xcassets in Resources */,
+				53DB761D22A987AA0058E8FD /* 180x135.jpg in Resources */,
 				53DB753C22A70CE60058E8FD /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

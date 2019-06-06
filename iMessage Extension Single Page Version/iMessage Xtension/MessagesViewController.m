@@ -100,7 +100,9 @@ static NSString * const reuseIdentifier = @"Daily Verses";
         }];
         [alert addAction:action];
     }
-    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        //Cancel if the user clicks outside the alert view
+    }]];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
@@ -207,6 +209,7 @@ static NSString * const reuseIdentifier = @"Daily Verses";
     if (self.presentationStyle == MSMessagesAppPresentationStyleExpanded)
     {
         NSLog(@"expanded yes");
+        [self requestPresentationStyle:MSMessagesAppPresentationStyleCompact];
         //self.presentationStyle = MSMessagesAppPresentationStyleCompact;
     }
    // [self.collectionView reloadData];

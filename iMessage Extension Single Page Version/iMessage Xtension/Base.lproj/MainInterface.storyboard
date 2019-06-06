@@ -46,7 +46,7 @@
                                 <rect key="frame" x="210" y="52" width="76" height="30"/>
                                 <state key="normal" title="Translation"/>
                                 <connections>
-                                    <action selector="onChangeTranslation:" destination="ObA-dk-sSI" eventType="touchUpInside" id="b9S-5q-jHl"/>
+                                    <action selector="onChangeTranslation:" destination="ObA-dk-sSI" eventType="touchUpInside" id="FMG-ua-kle"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEs-TR-Hkv">
@@ -59,26 +59,32 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jCP-gO-Ag5" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="210" id="1xo-jf-aj1"/>
-                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="210" id="7WV-6B-idp"/>
+                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="210" placeholder="YES" id="7WV-6B-idp"/>
                             <constraint firstItem="sHn-tI-Bfa" firstAttribute="top" secondItem="jCP-gO-Ag5" secondAttribute="bottom" constant="8" id="BxC-bg-0eO"/>
                             <constraint firstAttribute="bottom" secondItem="sHn-tI-Bfa" secondAttribute="bottom" id="Fr9-pD-H4y"/>
                             <constraint firstItem="sHn-tI-Bfa" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" id="KBg-31-tPJ"/>
                             <constraint firstItem="sHn-tI-Bfa" firstAttribute="trailing" secondItem="mD1-2f-1g2" secondAttribute="trailing" id="QIV-lv-65u"/>
                             <constraint firstItem="LEs-TR-Hkv" firstAttribute="top" secondItem="mD1-2f-1g2" secondAttribute="top" constant="8" id="XTo-K9-yIo"/>
-                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="120" id="i0o-BQ-4MW"/>
+                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="120" placeholder="YES" id="i0o-BQ-4MW"/>
                             <constraint firstItem="jCP-gO-Ag5" firstAttribute="top" secondItem="mD1-2f-1g2" secondAttribute="top" constant="8" id="mru-PK-TcJ"/>
                             <constraint firstItem="LEs-TR-Hkv" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="120" id="sRc-ZN-4SN"/>
                             <constraint firstItem="sHn-tI-Bfa" firstAttribute="top" secondItem="LEs-TR-Hkv" secondAttribute="bottom" constant="8" id="sqq-1Y-Ce9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mD1-2f-1g2"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="i0o-BQ-4MW"/>
+                                <exclude reference="7WV-6B-idp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
-                        <outlet property="collectionView" destination="sHn-tI-Bfa" id="Uwv-2t-bOG"/>
-                        <outlet property="translationButton" destination="jCP-gO-Ag5" id="rgK-UM-DF9"/>
+                        <outlet property="collectionView" destination="sHn-tI-Bfa" id="SfO-Pe-a9d"/>
+                        <outlet property="translationButton" destination="jCP-gO-Ag5" id="kSg-ZO-dKX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
