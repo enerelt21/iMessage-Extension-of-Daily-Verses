@@ -11,7 +11,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581616853.26645"
+            timestampString = "581617348.980168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -27,11 +27,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581616853.266896"
+            timestampString = "581617348.980601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
             <Locations>
@@ -75,11 +75,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581616853.267212"
+            timestampString = "581617348.980924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -91,27 +91,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581616853.267499"
+            timestampString = "581617348.981235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iMessage Xtension/MessagesViewController.m"
+            timestampString = "581617348.981535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581616853.267774"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>

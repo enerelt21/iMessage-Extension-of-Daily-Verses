@@ -107,12 +107,14 @@ static NSString * const reuseIdentifier = @"Daily Verses";
     cell.url = url;
     cell.cellLabel = [[UILabel alloc] initWithFrame:CGRectMake( cell.bounds.origin.x, cell.bounds.origin.y, 50, 12)];
     [cell.cellLabel setText:self.dateComp[self.verses.count - indexPath.row - 1]];
-    NSLog(@"%@", cell.cellLabel.text);
-    //[cell.cellLabel setTextAlignment: NSTextAlignmentLeft];
+    //NSLog(@"%@", cell.cellLabel.text);
+    [cell.cellLabel setTextAlignment: NSTextAlignmentCenter];
     //cell.cellLabel.frame = CGRectMake(cell.center.x, cell.center.y, 10, 5);
-    [cell.cellLabel setBackgroundColor:[UIColor grayColor]];
+    [cell.cellLabel setBackgroundColor:[UIColor whiteColor]];
     [cell.cellLabel setTextColor:[UIColor blackColor]];
     [cell.cellLabel setFont:[UIFont boldSystemFontOfSize:8]];
+    cell.cellLabel.layer.cornerRadius = 5;
+    cell.cellLabel.clipsToBounds = YES;
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
     {
