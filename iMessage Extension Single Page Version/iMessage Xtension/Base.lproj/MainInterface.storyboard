@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sHn-tI-Bfa">
-                                <rect key="frame" x="0.0" y="90" width="320" height="438"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="428"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lWn-Zv-08l">
                                     <size key="itemSize" width="50" height="50"/>
@@ -43,31 +43,36 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCP-gO-Ag5">
-                                <rect key="frame" x="219" y="52" width="76" height="30"/>
-                                <state key="normal" title="Translation"/>
+                                <rect key="frame" x="104" y="57" width="56" height="30"/>
+                                <state key="normal" title="Trans"/>
                                 <connections>
                                     <action selector="onChangeTranslation:" destination="ObA-dk-sSI" eventType="touchUpInside" id="FMG-ua-kle"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEs-TR-Hkv">
-                                <rect key="frame" x="110" y="52" width="89" height="30"/>
+                                <rect key="frame" x="5" y="57" width="89" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-UF-aFl">
+                                <rect key="frame" x="230" y="0.0" width="90" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sHn-tI-Bfa" firstAttribute="top" secondItem="jCP-gO-Ag5" secondAttribute="bottom" constant="8" id="BxC-bg-0eO"/>
+                            <constraint firstItem="sHn-tI-Bfa" firstAttribute="top" secondItem="jCP-gO-Ag5" secondAttribute="bottom" constant="13" id="BxC-bg-0eO"/>
                             <constraint firstAttribute="bottom" secondItem="sHn-tI-Bfa" secondAttribute="bottom" id="Fr9-pD-H4y"/>
                             <constraint firstItem="sHn-tI-Bfa" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" id="KBg-31-tPJ"/>
                             <constraint firstItem="sHn-tI-Bfa" firstAttribute="trailing" secondItem="mD1-2f-1g2" secondAttribute="trailing" id="QIV-lv-65u"/>
-                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="top" secondItem="mD1-2f-1g2" secondAttribute="top" constant="8" id="XTo-K9-yIo"/>
-                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="leading" secondItem="LEs-TR-Hkv" secondAttribute="trailing" constant="20" id="gnl-tn-fZv"/>
-                            <constraint firstItem="mD1-2f-1g2" firstAttribute="trailing" secondItem="jCP-gO-Ag5" secondAttribute="trailing" constant="25" id="jkt-h4-bk5"/>
-                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="top" secondItem="mD1-2f-1g2" secondAttribute="top" constant="8" id="mru-PK-TcJ"/>
-                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="110" id="sRc-ZN-4SN"/>
-                            <constraint firstItem="sHn-tI-Bfa" firstAttribute="top" secondItem="LEs-TR-Hkv" secondAttribute="bottom" constant="8" id="sqq-1Y-Ce9"/>
+                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="top" secondItem="mD1-2f-1g2" secondAttribute="top" constant="13" id="XTo-K9-yIo"/>
+                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="leading" secondItem="LEs-TR-Hkv" secondAttribute="trailing" constant="10" id="gnl-tn-fZv"/>
+                            <constraint firstItem="mD1-2f-1g2" firstAttribute="trailing" secondItem="jCP-gO-Ag5" secondAttribute="trailing" constant="160" id="jkt-h4-bk5"/>
+                            <constraint firstItem="jCP-gO-Ag5" firstAttribute="top" secondItem="mD1-2f-1g2" secondAttribute="top" constant="13" id="mru-PK-TcJ"/>
+                            <constraint firstItem="LEs-TR-Hkv" firstAttribute="leading" secondItem="mD1-2f-1g2" secondAttribute="leading" constant="5" id="sRc-ZN-4SN"/>
+                            <constraint firstItem="sHn-tI-Bfa" firstAttribute="top" secondItem="LEs-TR-Hkv" secondAttribute="bottom" constant="13" id="sqq-1Y-Ce9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mD1-2f-1g2"/>
                     </view>

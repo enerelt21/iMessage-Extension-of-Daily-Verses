@@ -11,11 +11,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581617348.980168"
+            timestampString = "581634576.692012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -27,60 +27,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581617348.980601"
+            timestampString = "581634576.6926841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__64-[MessagesViewController collectionView:cellForItemAtIndexPath:]_block_invoke_2"
-                  moduleName = "iMessage Xtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/enebat-erdene/Desktop/iMessage-Extension-of-Daily-Verses/iMessage%20Extension%20Single%20Page%20Version/iMessage%20Xtension/MessagesViewController.m"
-                  timestampString = "581614662.488308"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
-                  offsetFromSymbolStart = "389">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_e8_32s40s48s"
-                  moduleName = "iMessage Xtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/enebat-erdene/Desktop/iMessage-Extension-of-Daily-Verses/iMessage%20Extension%20Single%20Page%20Version/iMessage%20Xtension/MessagesViewController.m"
-                  timestampString = "581614662.490623"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581617348.980924"
+            timestampString = "581634576.693194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -91,12 +59,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581617348.981235"
+            timestampString = "581634576.693692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -107,12 +75,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMessage Xtension/MessagesViewController.m"
-            timestampString = "581617348.981535"
+            timestampString = "581634576.694177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

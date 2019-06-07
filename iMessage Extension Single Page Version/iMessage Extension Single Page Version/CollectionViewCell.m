@@ -21,12 +21,21 @@
     [self.verseImage.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor].active = YES;
     [self.verseImage.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor].active = YES;
     
+    self.cellLabel = [[UILabel alloc] initWithFrame:CGRectMake( self.bounds.origin.x, self.bounds.origin.y, 50, 12)];
+    [self.cellLabel setBackgroundColor:[UIColor whiteColor]];
+    [self.cellLabel setTextColor:[UIColor blackColor]];
+    [self.cellLabel setFont:[UIFont boldSystemFontOfSize:8]];
+    self.cellLabel.layer.cornerRadius = 5;
+    self.cellLabel.clipsToBounds = YES;
+//    UIImage *backGroundImage = [UIImage imageNamed:@"olivetree_cell_icon.png"];
+//    self.verseImage = [self.verseImage initWithImage:backGroundImage];
+
     return self;
 }
 -(void) prepareForReuse{
     self.verseImage.image = nil;
     self.url = nil;
-    self.cellLabel = nil;
+    //self.cellLabel = nil;
     [super prepareForReuse];
 }
 

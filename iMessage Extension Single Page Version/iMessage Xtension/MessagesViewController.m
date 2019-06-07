@@ -10,9 +10,12 @@
 #import "CollectionViewController.h"
 #import <QuartzCore/QuartzCore.h>
 @interface MessagesViewController ()
+
 @property (strong, nonatomic) NSMutableArray *verses;
 @property (strong, nonatomic) NSMutableArray *dateComp;
 @property (strong, nonatomic) NSString *translation;
+//@property (strong, nonatomic) NSMutableArray <UIImageView *> *filteredImages;
+//@property BOOL filtered;
 @end
 
 static NSString * const reuseIdentifier = @"Daily Verses";
@@ -27,18 +30,34 @@ static NSString * const reuseIdentifier = @"Daily Verses";
     //[self.translationButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size: 16]];
     self.translationButton.layer.cornerRadius = 10;
     self.translationButton.clipsToBounds = YES;
-
+    
+//    self.searchBar.delegate = self;
+//    [self.searchBar setText:@"MM/DD/YYYY"];
+//    self.filtered = false;
+//    
     self.navigationItem.title = @"Daily Verses";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self.collectionView registerClass:CollectionViewCell.class forCellWithReuseIdentifier:reuseIdentifier];
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     layout.itemSize = CGSizeMake(118, 118);
 }
+/*
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText.length == 0)
+        self.filtered = false;
+    else
+    {
+        self.filtered = true;
+        
+    }
+    
+    
+}*/
 -(void) getVerses{
     self.verses = [NSMutableArray array];
     self.dateComp = [NSMutableArray array];
     NSDateComponents *todayComp = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate: [NSDate date]];
-    NSDateComponents *comp = [[NSDateComponents alloc] init] ;
+    NSDateComponents *comp = [[NSDateComponents alloc] init];
     comp.year = 2019;
     comp.month = 1;
     comp.day = 1;
@@ -105,32 +124,37 @@ static NSString * const reuseIdentifier = @"Daily Verses";
     self.verses[self.verses.count - indexPath.row - 1] = [self.verses[self.verses.count - indexPath.row - 1] stringByReplacingOccurrencesOfString:self.translation withString:@"NIV"];
     
     cell.url = url;
-    cell.cellLabel = [[UILabel alloc] initWithFrame:CGRectMake( cell.bounds.origin.x, cell.bounds.origin.y, 50, 12)];
+   // cell.cellLabel = [[UILabel alloc] initWithFrame:CGRectMake( cell.bounds.origin.x, cell.bounds.origin.y, 50, 12)];
+    //cell.cellLabel = UILabel.new;
+//    if ([cell.cellLabel isEqual:self.dateComp[self.verses.count - indexPath.row - 1]])
     [cell.cellLabel setText:self.dateComp[self.verses.count - indexPath.row - 1]];
+    [cell.verseImage addSubview:cell.cellLabel];
+//    //[cell.verseImage addSubview:cell.cellLabel];
     //NSLog(@"%@", cell.cellLabel.text);
-    [cell.cellLabel setTextAlignment: NSTextAlignmentCenter];
+    /*[cell.cellLabel setTextAlignment: NSTextAlignmentCenter];
     //cell.cellLabel.frame = CGRectMake(cell.center.x, cell.center.y, 10, 5);
     [cell.cellLabel setBackgroundColor:[UIColor whiteColor]];
     [cell.cellLabel setTextColor:[UIColor blackColor]];
     [cell.cellLabel setFont:[UIFont boldSystemFontOfSize:8]];
     cell.cellLabel.layer.cornerRadius = 5;
-    cell.cellLabel.clipsToBounds = YES;
-    
+    cell.cellLabel.clipsToBounds = YES;*/
+    UIImage *backGroundImage = [UIImage imageNamed:@"olivetree_cell_icon.png"];
+    cell.verseImage = [cell.verseImage initWithImage:backGroundImage];
+ //   [cell.verseImage.image initWithData:DATA];
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             if ([cell.url isEqual:url])
-            {
                 cell.verseImage.image = [UIImage imageWithData:data];
-                [cell.verseImage addSubview:cell.cellLabel];
-            }
         });
         if (error)
         {
             NSLog(@"The process of getting bible verses failed: %@", error);
             return;
         }
+
     }] resume];
+    
     return cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

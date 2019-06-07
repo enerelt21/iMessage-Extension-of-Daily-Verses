@@ -16,6 +16,7 @@
 		532FC4C622A023BE00834A60 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 532FC4C522A023BE00834A60 /* CollectionViewController.m */; };
 		532FC4C922A07E9B00834A60 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 532FC4C822A07E9B00834A60 /* CollectionViewCell.m */; };
 		532FC4D022A18B9300834A60 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532FC4CF22A18B9300834A60 /* MainStoryboard.storyboard */; };
+		533FCF9222AAC7EB00A46674 /* olivetree_cell_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 533FCF9122AAC7EB00A46674 /* olivetree_cell_icon.png */; };
 		53DB753522A70CE60058E8FD /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DB750322A6DB2C0058E8FD /* Messages.framework */; };
 		53DB753C22A70CE60058E8FD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53DB753A22A70CE60058E8FD /* MainInterface.storyboard */; };
 		53DB753E22A70CE70058E8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53DB753D22A70CE70058E8FD /* Assets.xcassets */; };
@@ -87,8 +88,8 @@
 		532FC4C722A07E9B00834A60 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		532FC4C822A07E9B00834A60 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		532FC4CF22A18B9300834A60 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		533FCF9122AAC7EB00A46674 /* olivetree_cell_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = olivetree_cell_icon.png; path = ../../../olivetree_cell_icon.png; sourceTree = "<group>"; };
 		53DB750322A6DB2C0058E8FD /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
-		53DB752B22A709710058E8FD /* iMessage Extension Single Page Version-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMessage Extension Single Page Version-Bridging-Header.h"; sourceTree = "<group>"; };
 		53DB753422A70CE60058E8FD /* iMessage Xtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iMessage Xtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DB753722A70CE60058E8FD /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		53DB753822A70CE60058E8FD /* MessagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
@@ -168,7 +169,6 @@
 				532FC4C522A023BE00834A60 /* CollectionViewController.m */,
 				532FC4C722A07E9B00834A60 /* CollectionViewCell.h */,
 				532FC4C822A07E9B00834A60 /* CollectionViewCell.m */,
-				53DB752B22A709710058E8FD /* iMessage Extension Single Page Version-Bridging-Header.h */,
 				532FC4CF22A18B9300834A60 /* MainStoryboard.storyboard */,
 				532FC49B229F383500834A60 /* Assets.xcassets */,
 				532FC49D229F383500834A60 /* LaunchScreen.storyboard */,
@@ -209,6 +209,7 @@
 			children = (
 				53DB753822A70CE60058E8FD /* MessagesViewController.m */,
 				53DB753722A70CE60058E8FD /* MessagesViewController.h */,
+				533FCF9122AAC7EB00A46674 /* olivetree_cell_icon.png */,
 				53DB761622A987910058E8FD /* images */,
 				53DB753A22A70CE60058E8FD /* MainInterface.storyboard */,
 				53DB753D22A70CE70058E8FD /* Assets.xcassets */,
@@ -388,6 +389,7 @@
 				53DB761B22A987AA0058E8FD /* 87.jpg in Resources */,
 				53DB753E22A70CE70058E8FD /* Assets.xcassets in Resources */,
 				53DB762122A9B03B0058E8FD /* Bible+-by-Olive-Tree-app-icon.png in Resources */,
+				533FCF9222AAC7EB00A46674 /* olivetree_cell_icon.png in Resources */,
 				53DB761D22A987AA0058E8FD /* 180x135.jpg in Resources */,
 				53DB753C22A70CE60058E8FD /* MainInterface.storyboard in Resources */,
 			);

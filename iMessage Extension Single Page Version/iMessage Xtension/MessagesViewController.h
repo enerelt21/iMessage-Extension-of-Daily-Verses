@@ -9,11 +9,11 @@
 #import <Messages/Messages.h>
 //#import "CollectionViewController.h"
 
-@interface MessagesViewController : MSMessagesAppViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface MessagesViewController : MSMessagesAppViewController <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) UIGestureRecognizer *tapExpand;
 @property (strong) IBOutlet UICollectionView *collectionView;
 @property (strong) IBOutlet UIButton *translationButton;
 @property (strong, nonatomic) MSMessage *message;
-
+//@property (strong) IBOutlet UISearchBar *searchBar;
 -(IBAction)onChangeTranslation:(id)sender;
 @end
