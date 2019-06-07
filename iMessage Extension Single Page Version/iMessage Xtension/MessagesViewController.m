@@ -36,6 +36,7 @@ static NSString * const reuseIdentifier = @"Daily Verses";
 }
 -(void) getVerses{
     self.verses = [NSMutableArray array];
+    self.dateComp = [NSMutableArray array];
     NSDateComponents *todayComp = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate: [NSDate date]];
     NSDateComponents *comp = [[NSDateComponents alloc] init] ;
     comp.year = 2019;
@@ -104,16 +105,23 @@ static NSString * const reuseIdentifier = @"Daily Verses";
     self.verses[self.verses.count - indexPath.row - 1] = [self.verses[self.verses.count - indexPath.row - 1] stringByReplacingOccurrencesOfString:self.translation withString:@"NIV"];
     
     cell.url = url;
-    cell.cellLabel.text = self.dateComp[self.verses.count - indexPath.row - 1];
-    cell.cellLabel.frame = CGRectMake(cell.center.x, cell.center.y, 10, 5);
-    cell.cellLabel.textColor = [UIColor blueColor];
-    [cell.cellLabel setFont:[UIFont fontWithName:@"Helvetica" size: 8]];
+    cell.cellLabel = [[UILabel alloc] initWithFrame:CGRectMake( cell.bounds.origin.x, cell.bounds.origin.y, 50, 12)];
+    [cell.cellLabel setText:self.dateComp[self.verses.count - indexPath.row - 1]];
+    NSLog(@"%@", cell.cellLabel.text);
+    //[cell.cellLabel setTextAlignment: NSTextAlignmentLeft];
+    //cell.cellLabel.frame = CGRectMake(cell.center.x, cell.center.y, 10, 5);
+    [cell.cellLabel setBackgroundColor:[UIColor grayColor]];
+    [cell.cellLabel setTextColor:[UIColor blackColor]];
+    [cell.cellLabel setFont:[UIFont boldSystemFontOfSize:8]];
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             if ([cell.url isEqual:url])
+            {
                 cell.verseImage.image = [UIImage imageWithData:data];
+                [cell.verseImage addSubview:cell.cellLabel];
+            }
         });
         if (error)
         {
