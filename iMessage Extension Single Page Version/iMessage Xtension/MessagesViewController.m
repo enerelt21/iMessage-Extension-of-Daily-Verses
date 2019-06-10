@@ -152,7 +152,6 @@ static NSString * const reuseIdentifier = @"Daily Verses";
             NSLog(@"The process of getting bible verses failed: %@", error);
             return;
         }
-
     }] resume];
     
     return cell;
